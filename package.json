@@ -1,0 +1,27 @@
+{
+  "name": "tcc_inatel_csr_vs_ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/server.js --watch server",
+    "build": "next build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasselani/tcc_inatel_csr_vs_ssr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasselani/tcc_inatel_csr_vs_ssr/issues"
+  },
+  "homepage": "https://github.com/lucasselani/tcc_inatel_csr_vs_ssr#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "next": "^7.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
