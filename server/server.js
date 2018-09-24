@@ -24,7 +24,11 @@ app.prepare().then(() => {
     server.get('/api/images', async (req, res) => {
         try {
             const data = await ref.once("value");
-            return res.json(data.val());
+            var results = [];
+            data.forEach(element => {
+                results.push(element.val().image);
+            });
+            return res.json(results);
         } catch (err) {
             res.json({ error: err.message || err.toString() });
         }
