@@ -11,3 +11,9 @@ Repositório contendo o código da comparação das técnicas SSR e CSR.
 - Exercutar um dos comandos a seguir para baixar as dependências: npm install ou yarn
 - Subir o servidor através de um dos comandos a seguir: npm run dev ou yarn dev
 - Acessar localhost:8000
+
+## Endpoints
+- GET: http://localhost:8000/api/images
+Retorna uma lista com todas as imagens salvas no Firebase em base64.
+- GET: http://localhost:8000/api/image?image=https://www.w3schools.com/w3css/img_lights.jpg
+Salva uma nova imagem no firebase. A URL providenciada deve ser de uma imagem (observar extensão).
