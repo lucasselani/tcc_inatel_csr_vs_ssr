@@ -5,6 +5,10 @@ Este repositório contém os código da comparação das técnicas SSR e CSR. Se
 - [Tutorial Hackernoon](https://hackernoon.com/server-side-vs-client-side-rendering-in-react-apps-443efd6f2e87)
 - [Repositório com código exemplo](https://github.com/builderbook/builderbook/tree/master/tutorials/3-end)
 
+# Branchs
+- Master: Contém o código principal para uso no TCC.
+- Feature: Contém um código misto, utilizando o backend do TCC com o frontend do tutorial do Hackernoon.
+
 # Configurar ambiente e subir server
 - Instalar o NPM no PC
 - (Opcional) Instalar o Yarn no PC
