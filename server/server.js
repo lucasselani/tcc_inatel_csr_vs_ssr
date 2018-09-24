@@ -4,10 +4,10 @@ var serviceAccount = require("./firebase.json");
 const express = require('express');
 const next = require('next');
 
-const port = process.env.PORT || 8000;
-const ROOT_URL = `http://localhost:${port}`;
-
 const dev = process.env.NODE_ENV !== 'production'
+const port = process.env.PORT || 8000;
+const ROOT_URL = dev ? `http://localhost:${port}` : 'https://tcc-ssr-vs-csr.herokuapp.com/';
+
 const app = next({ dev })
 const handle = app.getRequestHandler();
 
