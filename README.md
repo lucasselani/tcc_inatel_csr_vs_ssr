@@ -12,7 +12,10 @@ Este repositório contém os código da comparação das técnicas SSR e CSR. Se
 - Master: Contém o código principal para uso no TCC.
 - Feature: Contém um código misto, utilizando o backend do TCC com o frontend do tutorial do Hackernoon.
 
-# Configurar ambiente e subir server
+# Ambiente publicado no Heroku
+- Acessar https://ssr-vs-csr.herokuapp.com/
+
+# Configurar ambiente e subir server local
 - Instalar o [Node](https://nodejs.org/en/download/) no PC, versão mais recente
 - (Opcional) Instalar o [Yarn](https://yarnpkg.com/lang/en/docs/install/) no PC, versão mais recente
 - Clonar este repositório
@@ -23,16 +26,16 @@ Este repositório contém os código da comparação das técnicas SSR e CSR. Se
 # Endpoints
 É possível acessar os endpoints abaixo para cadastrar novas imagens no Firebase e baixar a lista de imagens cadastradas.
 
-    GET: http://localhost:8000/api/images
+    GET: http://localhost:8000/api/images ou https://ssr-vs-csr.herokuapp.com/api/images
 Retorna uma lista com todas as imagens salvas no Firebase em base64.
     
-    POST: http://localhost:8000/api/images
+    POST: http://localhost:8000/api/images ou https://ssr-vs-csr.herokuapp.com/api/images
 Salva uma nova imagem no firebase. A URL providenciada deve ser de uma imagem (observar extensão).
 Para enviar a imagem, marcar a opção x-www-form-urlencoded no Postman e criar uma chave image com a URL da imagem como valor, ou utilizar um JSON no body da requisição ou no Postman, como o exemplo a seguir:
 
 { "image"="https://www.w3schools.com/w3css/img_lights.jpg" }
 
-    DELETE: http://localhost:8000/api/images
+    DELETE: http://localhost:8000/api/images ou https://ssr-vs-csr.herokuapp.com/api/images
 Deleta toda as imagens salvas no Firebase caso não seja passado o argumento "index" no body.
 Para deletar uma imagem específica, é necessário enviar o index da imagem desejada no body da requisição (de 0 a n). Para deletar a imagem, marcar a opção x-www-form-urlencoded no Postman e criar uma chave index com o index da imagem como valor, ou utilizar um JSON no body da requisição ou no Postman, como o exemplo a seguir:
 
