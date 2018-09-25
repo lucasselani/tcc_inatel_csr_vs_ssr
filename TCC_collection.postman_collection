@@ -1,0 +1,169 @@
+{
+	"variables": [],
+	"info": {
+		"name": "TCC Collection",
+		"_postman_id": "13e58a6f-dbc6-aefd-a6d3-e4f8912a16c7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create image",
+			"request": {
+				"url": "https://ssr-vs-csr.herokuapp.com/api/images",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "tcc-inatel-2018",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "image",
+							"value": "https://www.w3schools.com/w3css/img_lights.jpg",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Create image"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Images",
+			"request": {
+				"url": "https://ssr-vs-csr.herokuapp.com/api/images",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "tcc-inatel-2018",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get Images"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Images",
+			"request": {
+				"url": "https://ssr-vs-csr.herokuapp.com/api/images",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "tcc-inatel-2018",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "index",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Delete Images"
+			},
+			"response": [
+				{
+					"id": "2c60134f-69c9-4a24-9380-8cddcd946403",
+					"name": "Delete All Images",
+					"originalRequest": {
+						"url": "https://ssr-vs-csr.herokuapp.com/api/images",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "tcc-inatel-2018",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "index",
+									"value": "0",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": ""
+				},
+				{
+					"id": "3ce9ccf3-30e4-49fc-8b0b-d9069311649e",
+					"name": "Delete Specific Images",
+					"originalRequest": {
+						"url": "https://ssr-vs-csr.herokuapp.com/api/images",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "tcc-inatel-2018",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "index",
+									"value": "0",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": ""
+				}
+			]
+		}
+	]
+}
