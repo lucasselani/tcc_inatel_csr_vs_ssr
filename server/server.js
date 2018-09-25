@@ -1,6 +1,7 @@
 var firebase = require('firebase-admin');
 var serviceAccount = require("./firebase.json");
 
+const bodyParser = require('body-parser');
 const express = require('express');
 const next = require('next');
 
@@ -13,16 +14,19 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
     var server = express();
+    server.use(bodyParser.json());
+    server.use(bodyParser.urlencoded({ extended: false }));
+
     var request = require('request').defaults({ encoding: null });
     firebase.initializeApp({
         credential: firebase.credential.cert(serviceAccount),
         databaseURL: "https://tcc-ssr-vs-csr.firebaseio.com"
     });
     var db = firebase.database();
-    var ref = db.ref("images");
 
     server.get('/api/images', async (req, res) => {
         try {
+            var ref = db.ref("images");
             const data = await ref.once("value");
             var results = [];
             data.forEach(element => {
@@ -34,10 +38,11 @@ app.prepare().then(() => {
         }
     });
 
-    server.get('/api/image', async (req, res) => {
+    server.post('/api/images', async (req, res) => {
         try {
-            await request.get(req.query.image, function (error, response, body) {
+            await request.get(req.body.image, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
+                    var ref = db.ref("images");
                     const image = "data:" + response.headers["content-type"] + ";base64," + new Buffer(body).toString('base64');
                     const data = ref.push({ image }, error => {
                         if (error) {
@@ -48,6 +53,16 @@ app.prepare().then(() => {
                     });
                 }
             });
+        } catch (err) {
+            res.json({ error: err.message || err.toString() });
+        }
+    });
+
+    server.delete('/api/images', async (req, res) => {
+        try {
+            var ref = db.ref("images");
+            ref.remove();
+            return res.json({ sucess: true });
         } catch (err) {
             res.json({ error: err.message || err.toString() });
         }

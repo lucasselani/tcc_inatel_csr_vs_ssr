@@ -23,5 +23,12 @@ Este repositório contém os código da comparação das técnicas SSR e CSR. Se
     GET: http://localhost:8000/api/images
 Retorna uma lista com todas as imagens salvas no Firebase em base64.
     
-    GET: http://localhost:8000/api/image?image=https://www.w3schools.com/w3css/img_lights.jpg
+    POST: http://localhost:8000/api/images
 Salva uma nova imagem no firebase. A URL providenciada deve ser de uma imagem (observar extensão).
+Para enviar a imagem, marcar a opção x-www-form-urlencoded no Postman e criar uma chave image com a URL da imagem como valor, ou utilizar um JSON no body da requisição ou no Postman, como o exemplo a seguir:
+{
+    "image"="https://www.w3schools.com/w3css/img_lights.jpg"
+}
+
+    DELETE: http://localhost:8000/api/images
+Deleta toda as imagens salvas no Firebase.
