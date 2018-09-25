@@ -24,7 +24,7 @@ app.prepare().then(() => {
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: false }));
     server.use(function (req, res, next) {
-        if (req.headers.authorization !== "tcc-inatel-2018" &&  req.url.startsWith("/api/")) {
+        if (req.headers.key !== "tcc-inatel-2018" &&  req.url.startsWith("/api/")) {
             return res.sendStatus(401);
         }
         next();
