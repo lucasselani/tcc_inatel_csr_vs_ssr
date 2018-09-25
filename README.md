@@ -24,9 +24,8 @@ Este repositório contém os código da comparação das técnicas SSR e CSR. Se
 
 # Endpoints
 É possível acessar os endpoints abaixo para cadastrar novas imagens no Firebase e baixar a lista de imagens cadastradas.
-##### TODOS os endpoints abaixo, para funcionar, precisam ter a váriavel Authorization no Header setada com o valor: tcc-inatel-2018
-#
-#
+**TODOS os endpoints abaixo, para funcionar, precisam ter a váriavel Authorization no Header setada com o valor: tcc-inatel-2018**
+
     GET: http://localhost:8000/api/images ou https://ssr-vs-csr.herokuapp.com/api/images
 Retorna uma lista com todas as imagens salvas no Firebase em base64.
     
