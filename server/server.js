@@ -29,6 +29,9 @@ app.prepare().then(() => {
         if (req.headers.key !== "tcc-inatel-2018" &&  req.url.startsWith("/api/")) {
             return res.sendStatus(401);
         }
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
         next();
     });
 
