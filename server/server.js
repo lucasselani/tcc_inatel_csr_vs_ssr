@@ -13,16 +13,22 @@ const app = next({ dev })
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
-    var server = express();
-    server.use(bodyParser.json());
-    server.use(bodyParser.urlencoded({ extended: false }));
-
     var request = require('request').defaults({ encoding: null });
     firebase.initializeApp({
         credential: firebase.credential.cert(serviceAccount),
         databaseURL: "https://tcc-ssr-vs-csr.firebaseio.com"
     });
     var db = firebase.database();
+
+    var server = express();
+    server.use(bodyParser.json());
+    server.use(bodyParser.urlencoded({ extended: false }));
+    server.use(function (req, res, next) {
+        if (req.headers.authorization !== "tcc-inatel-2018" &&  req.url.startsWith("/api/")) {
+            return res.sendStatus(401);
+        }
+        next();
+    });
 
     server.get('/api/images', async (req, res) => {
         try {
@@ -40,7 +46,7 @@ app.prepare().then(() => {
 
     server.post('/api/images', async (req, res) => {
         try {
-            if(req.body.image === undefined) return res.json({ error: "no url" });
+            if (req.body.image === undefined) return res.json({ error: "no url" });
             await request.get(req.body.image, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     var ref = db.ref("images");
@@ -63,21 +69,21 @@ app.prepare().then(() => {
         try {
             var index = req.body.index;
             var ref = db.ref("images");
-            if(index === undefined) {
+            if (index === undefined) {
                 ref.remove();
                 return res.json({ sucess: true });
             } else {
                 const data = await ref.once("value");
                 var i = 0;
                 data.forEach(element => {
-                    if(i == index) {
+                    if (i == index) {
                         ref.child(element.key).remove();
                         return res.json({ index: i });
                     }
                     i++;
                 });
                 return res.json({ index: "no child" });
-            }            
+            }
         } catch (err) {
             res.json({ error: err.message || err.toString() });
         }

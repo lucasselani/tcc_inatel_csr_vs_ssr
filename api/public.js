@@ -7,6 +7,7 @@ const ROOT_URL = dev ? `http://localhost:${port}` : 'https://ssr-vs-csr.herokuap
 async function sendRequest(path, options = {}) {
     const headers = {
         'Content-type': 'application/json; charset=UTF-8',
+        'Authorization': 'tcc-inatel-2018',
     };
 
     const response = await fetch(
