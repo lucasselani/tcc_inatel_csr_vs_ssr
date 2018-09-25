@@ -40,6 +40,7 @@ app.prepare().then(() => {
 
     server.post('/api/images', async (req, res) => {
         try {
+            if(req.body.image === undefined) return res.json({ error: "no url" });
             await request.get(req.body.image, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     var ref = db.ref("images");
