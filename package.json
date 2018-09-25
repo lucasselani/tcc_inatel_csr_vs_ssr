@@ -21,6 +21,7 @@
   "homepage": "https://github.com/lucasselani/tcc_inatel_csr_vs_ssr#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "es6-promise": "^4.2.5",
     "express": "^4.16.3",
     "firebase-admin": "^6.0.0",
     "isomorphic-fetch": "^2.2.1",
