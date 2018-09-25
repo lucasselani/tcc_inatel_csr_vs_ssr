@@ -60,9 +60,23 @@ app.prepare().then(() => {
 
     server.delete('/api/images', async (req, res) => {
         try {
+            var index = req.body.index;
             var ref = db.ref("images");
-            ref.remove();
-            return res.json({ sucess: true });
+            if(index === undefined) {
+                ref.remove();
+                return res.json({ sucess: true });
+            } else {
+                const data = await ref.once("value");
+                var i = 0;
+                data.forEach(element => {
+                    if(i == index) {
+                        ref.child(element.key).remove();
+                        return res.json({ index: i });
+                    }
+                    i++;
+                });
+                return res.json({ index: "no child" });
+            }            
         } catch (err) {
             res.json({ error: err.message || err.toString() });
         }

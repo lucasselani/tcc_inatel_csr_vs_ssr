@@ -29,6 +29,3 @@ Para enviar a imagem, marcar a opção x-www-form-urlencoded no Postman e criar 
 {
     "image"="https://www.w3schools.com/w3css/img_lights.jpg"
 }
-
-    DELETE: http://localhost:8000/api/images
-Deleta toda as imagens salvas no Firebase.
