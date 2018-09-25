@@ -10,7 +10,6 @@ Este repositório contém os código da comparação das técnicas SSR e CSR. Se
 
 # Branchs
 - Master: Contém o código principal para uso no TCC.
-- Feature: Contém um código misto, utilizando o backend do TCC com o frontend do tutorial do Hackernoon.
 
 # Ambiente publicado no Heroku
 - Acessar https://ssr-vs-csr.herokuapp.com/
