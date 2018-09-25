@@ -1,7 +1,8 @@
 import 'isomorphic-fetch';
 
+const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 8000;
-const ROOT_URL = `http://localhost:${port}`;
+const ROOT_URL = dev ? `http://localhost:${port}` : 'https://protected-spire-98195.herokuapp.com';
 
 async function sendRequest(path, options = {}) {
     const headers = {
