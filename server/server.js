@@ -4,6 +4,7 @@ var serviceAccount = require("./firebase.json");
 const bodyParser = require('body-parser');
 const express = require('express');
 const next = require('next');
+const cors = require('cors');
 
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 8000;
@@ -21,6 +22,7 @@ app.prepare().then(() => {
     var db = firebase.database();
 
     var server = express();
+    server.options('*', cors())
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: false }));
     server.use(function (req, res, next) {
