@@ -1,8 +1,8 @@
 # TCC Inatel 2018: SSR vs CSR
+[![Project](https://www.herokucdn.com/deploy/button.svg)](https://ssr-vs-csr.herokuapp.com/)
 Este repositório contém os código da comparação das técnicas SSR e CSR. Seguindo os passos abaixo é possível subir um server NodeJS na máquina local e acessar duas páginas diferentes, CSR e SSR, no qual cada uma delas renderiza uma lista de imagem utilizando as duas técnicas propostas.
 
 # Links
-- [Build publicada do projeto](https://ssr-vs-csr.herokuapp.com/ )
 - [Tutorial Hackernoon](https://hackernoon.com/server-side-vs-client-side-rendering-in-react-apps-443efd6f2e87)
 - [Repositório com código exemplo](https://github.com/builderbook/builderbook/tree/master/tutorials/3-end)
 
