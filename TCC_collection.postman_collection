@@ -19,7 +19,7 @@
 						"description": ""
 					},
 					{
-						"key": "Authorization",
+						"key": "key",
 						"value": "tcc-inatel-2018",
 						"description": ""
 					}
@@ -46,7 +46,7 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "key",
 						"value": "tcc-inatel-2018",
 						"description": ""
 					}
@@ -63,7 +63,7 @@
 				"method": "DELETE",
 				"header": [
 					{
-						"key": "Authorization",
+						"key": "key",
 						"value": "tcc-inatel-2018",
 						"description": ""
 					},
@@ -88,16 +88,17 @@
 			},
 			"response": [
 				{
-					"id": "2c60134f-69c9-4a24-9380-8cddcd946403",
+					"id": "97862e7b-9f88-4a37-9ae3-bdbabe1236b0",
 					"name": "Delete All Images",
 					"originalRequest": {
 						"url": "https://ssr-vs-csr.herokuapp.com/api/images",
 						"method": "DELETE",
 						"header": [
 							{
-								"key": "Authorization",
+								"key": "key",
 								"value": "tcc-inatel-2018",
-								"description": ""
+								"description": "",
+								"warning": ""
 							}
 						],
 						"body": {
@@ -123,23 +124,23 @@
 					"body": ""
 				},
 				{
-					"id": "3ce9ccf3-30e4-49fc-8b0b-d9069311649e",
+					"id": "d042ce2e-5e8f-4216-828c-cb5c9d4a44c9",
 					"name": "Delete Specific Images",
 					"originalRequest": {
 						"url": "https://ssr-vs-csr.herokuapp.com/api/images",
 						"method": "DELETE",
 						"header": [
 							{
-								"key": "Authorization",
+								"key": "key",
 								"value": "tcc-inatel-2018",
 								"description": "",
 								"warning": ""
 							},
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
 								"value": "application/x-www-form-urlencoded",
-								"description": ""
+								"description": "",
+								"warning": ""
 							}
 						],
 						"body": {
