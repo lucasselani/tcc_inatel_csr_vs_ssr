@@ -12,11 +12,7 @@ async function sendRequest(path, method) {
 
     const response = await fetch(
         `${ROOT_URL}${path}`,
-<<<<<<< HEAD
         Object.assign({ method: method, headers: headers })
-=======
-        Object.assign({ method: method }, { headers })
->>>>>>> c45037dfcd1c940ff46e4b98c91c6073896fb766
     );
 
     const data = await response.json();
