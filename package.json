@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server/server.js --watch server",
+    "dev": "nodemon server/server.js --watch server --exec babel-node",
     "build": "next build",
     "heroku-postbuild": "npm run build"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/lucasselani/tcc_inatel_csr_vs_ssr#readme",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "body-parser": "^1.18.3",
     "es6-promise": "^4.2.5",
     "express": "^4.16.3",

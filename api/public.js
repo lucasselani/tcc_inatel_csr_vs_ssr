@@ -1,3 +1,4 @@
+require('es6-promise').polyfill();
 import 'isomorphic-fetch';
 
 const dev = process.env.NODE_ENV !== 'production'
