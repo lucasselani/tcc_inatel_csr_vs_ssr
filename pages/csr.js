@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 import { getList } from '../api/public';
 
-function CSR({ list, loading }) {
+function CSRUI({ list, loading }) {
     if (loading) {
         return (
             <div style={{ padding: '10px 45px' }}>
@@ -18,18 +18,20 @@ function CSR({ list, loading }) {
                 </Head>
                 <p>Content on CSR page</p>
                 <br />
-                <div>
-                    {list.map((item, index) =>
-                        <img key={index} src={item} />
-                    )}
-                </div>
+                {list != null ? (
+                    <div>
+                        {list.map((item, index) =>
+                            <img key={index} src={item} />
+                        )}
+                    </div>
+                ) : null}
             </div>
         );
 
     }
 }
 
-class CSRWithData extends Component {
+class CSR extends Component {
     state = {
         list: null,
         loading: true,
@@ -48,8 +50,8 @@ class CSRWithData extends Component {
     }
 
     render() {
-        return <CSR {...this.props} {...this.state} />;
+        return <CSRUI {...this.props} {...this.state} />;
     }
 }
 
-export default CSRWithData;
+export default CSR;

@@ -9,18 +9,14 @@ async function sendRequest(path, method) {
         'Content-type': 'application/json; charset=UTF-8',
         'Authorization': 'tcc-inatel-2018',
     };
-
-    const response = await fetch(
-        `${ROOT_URL}${path}`,
-        Object.assign({ method: method, headers: headers })
-    );
-
+    var options = Object.assign({ method: method, headers: headers });
+    
+    const response = await fetch(`${ROOT_URL}${path}`, options);
     const data = await response.json();
 
     if (data.error) {
         throw new Error(data.error);
     }
-
     return data;
 }
 
