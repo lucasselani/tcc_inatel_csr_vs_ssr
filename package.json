@@ -1,7 +1,7 @@
 {
   "name": "tcc_inatel_csr_vs_ssr",
   "version": "1.0.0",
-  "description": "",
+  "description": "TCC Inatel 2018: SSR vs CSR",
   "main": "index.js",
   "scripts": {
     "build": "npm run build:next && npm run build:server",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/lucasselani/tcc_inatel_csr_vs_ssr.git"
   },
-  "author": "",
+  "author": "Lucas Selani de Melo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lucasselani/tcc_inatel_csr_vs_ssr/issues"
@@ -28,7 +28,6 @@
     "cors": "^2.8.4",
     "es6-promise": "^4.2.5",
     "express": "^4.16.3",
-    "firebase-admin": "^6.0.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^7.0.0",
     "nodemon": "^1.18.4",

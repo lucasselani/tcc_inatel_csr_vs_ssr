@@ -13,25 +13,24 @@ import Head from 'next/head';
 class SSR extends Component {
     static async getInitialProps() {
         const list = await getList("/api/data", "GET");
-        const title = 'SSR React App';
-        return { list, title };
+        return { list };
     }
 
     render() {
-        const { list, title } = this.props;
+        const { list } = this.props;
         return (
             <div style={{ textAlign: 'center', margin: '0' }}>
                 <Head>
-                    <title>{title}</title>
+                    <title>SSR React App</title>
                     <meta name="description" content="description for indexing bots" />
                 </Head>
                 <div className="root">
-                    {list.map((item, index) => 
-                        {
+                    {list.map((item, index) => {
+                        return(
                             <a key={index}>
-                                <h2> {item} </h2>
+                                <h2> {item.name} </h2>
                             </a>   
-                        }         
+                        )}         
                     )}
                 </div>
 
